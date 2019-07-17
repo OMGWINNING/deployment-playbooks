@@ -2,7 +2,7 @@
 - name: Create netstat security group
   hosts: localhost
   gather_facts: False
-  tasks: 
+  tasks:
   - name: Create Security group
     ec2_group:
       ec2_access_key: "{{ access_key }}"
@@ -10,6 +10,7 @@
       name: "{{ netstat_security_group }}"
       description: "Default security group"
       region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
       purge_rules_egress: false
       purge_rules: false
       rules:
@@ -34,7 +35,7 @@
         ec2_access_key: "{{ access_key }}"
         ec2_secret_key: "{{ secret_key }}"
         key_name: "{{ awskeypair_name }}"
-        instance_tags: 
+        instance_tags:
           Name: "{{ netstat_instance_name }}"
         group: "{{ netstat_security_group }}"
         instance_type: "{{ netstat_instance_type }}"

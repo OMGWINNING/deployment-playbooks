@@ -8,3 +8,12 @@ group_vars/netstat
 group_vars/moc
 
 hosts
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
