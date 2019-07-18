@@ -10,6 +10,7 @@
       name: "{{ moc_security_group }}"
       description: "Default security group"
       region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
       purge_rules_egress: false
       purge_rules: false
       rules:
