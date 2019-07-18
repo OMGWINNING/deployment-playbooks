@@ -21,7 +21,7 @@ image: "ami-026c8acd92718196b"
 region: "us-east-1"
 
 NODE_PWD: "node.pwd" # don't change this one
-NODE_SOURCE_DEB: "https://deb.nodesource.com/node_10.x/"
+NODE_SOURCE_DEB: "https://deb.nodesource.com/node_8.x/"
 PARITY_BIN_LOC: "https://releases.parity.io/ethereum/v2.5.5/x86_64-unknown-linux-gnu/parity"
 PARITY_BIN_SHA256: "1deb0d9dcf3eef2fee32867a200ddb65c9343071b6e4e39660d8837184b164e3"
 ORCHESTRATOR_BIN_LOC: ""
