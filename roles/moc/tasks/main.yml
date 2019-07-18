@@ -32,7 +32,7 @@
 - name: Config MOC_KEYFILE file
   shell: "echo '{{ MOC_KEYFILE }}' > {{ home }}/parity_data/keys/{{ GENESIS_NETWORK_NAME }}/{{ username }}.key"
 
-- git: repo=https://github.com/{{ MAIN_REPO_FETCH }}/poa-scripts-moc dest={{ home }}/poa-scripts-moc version={{ SCRIPTS_MOC_BRANCH }}
+- git: repo=https://github.com/{{ POANETWORK_REPO_FETCH }}/poa-scripts-moc dest={{ home }}/poa-scripts-moc version={{ SCRIPTS_MOC_BRANCH }}
 
 - file: path={{ home }}/poa-scripts-moc owner={{ username }} group={{ username }} recurse=yes
 
