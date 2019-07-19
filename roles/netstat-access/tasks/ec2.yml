@@ -7,6 +7,7 @@
       name: "{{ netstat_security_group }}"
       description: "Default security group"
       region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
       purge_rules: true
 
 - name: Add ssh access
@@ -17,6 +18,7 @@
       name: "{{ netstat_security_group }}"
       description: "Default security group"
       region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
       purge_rules_egress: false
       purge_rules: false
       rules:
@@ -24,7 +26,7 @@
           from_port: "{{ item }}"
           to_port: "{{ item }}"
           cidr_ip: 0.0.0.0/0
-  with_items: 
+  with_items:
     - "22"
   when: allow_netstat_ssh == true
 
@@ -36,6 +38,7 @@
       name: "{{ netstat_security_group }}"
       description: "Default security group"
       region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
       purge_rules_egress: false
       purge_rules: false
       rules:
@@ -52,6 +55,7 @@
       name: "{{ netstat_security_group }}"
       description: "Default security group"
       region: "{{ region }}"
+      vpc_id: "{{ vpc_id }}"
       purge_rules_egress: false
       purge_rules: false
       rules:
@@ -59,6 +63,6 @@
           from_port: "{{ item }}"
           to_port: "{{ item }}"
           cidr_ip: 0.0.0.0/0
-  with_items: 
+  with_items:
     - "3000"
   when: allow_netstat_http == true

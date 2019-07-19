@@ -3,6 +3,16 @@
   user: ubuntu
   become: True
 #  user: root
+  pre_tasks:
+    - name: Check if inside AWS.
+      uri:
+        url: http://169.254.169.254/latest/dynamic/instance-identity/
+        timeout: 5
+      register: aws_uri_check
+      failed_when: False
+
+    - set_fact:
+        is_aws_environment: "{{ aws_uri_check.status == 200 }}"
   roles:
     - preconf
   tags: preconf
